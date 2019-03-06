@@ -1,10 +1,15 @@
 // Based on https://github.com/shramov/leaflet-plugins
 // GridLayer like https://avinmathew.com/leaflet-and-google-maps/ , but using MutationObserver instead of jQuery
 
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+		typeof define === 'function' && define.amd ? define(['exports'], factory) :
+			(factory((global.Leaflet = global.Leaflet || {}, global.Leaflet.markercluster = global.Leaflet.markercluster || {})));
+}(this, (function (exports) { 'use strict';
 
 // 🍂class GridLayer.GoogleMutant
 // 🍂extends GridLayer
-L.GridLayer.GoogleMutant = L.GridLayer.extend({
+var GoogleMutant = L.GridLayer.GoogleMutant = L.GridLayer.extend({
 	options: {
 		minZoom: 0,
 		maxZoom: 23,
@@ -481,3 +486,7 @@ L.GridLayer.GoogleMutant = L.GridLayer.extend({
 L.gridLayer.googleMutant = function (options) {
 	return new L.GridLayer.GoogleMutant(options);
 };
+		     
+exports.GoogleMutant = GoogleMutant;
+
+})));
