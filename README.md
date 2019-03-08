@@ -38,8 +38,18 @@ Then, you can create an instance of `L.GridLayer.GoogleMutant` on your JS code:
 
 ```javascript
 var roads = L.gridLayer.googleMutant({
-	type: 'roadmap'	// valid values are 'roadmap', 'satellite', 'terrain' and 'hybrid'
+    type: 'roadmap' // valid values are 'roadmap', 'satellite', 'terrain' and 'hybrid'
 }).addTo(map);
+```
+
+Or using ES6 modules:
+```js
+import { GoogleMutant } from "leaflet.gridlayer.googlemutant"
+
+const roads = new GoogleMutant({
+    type: 'roadmap' // valid values are 'roadmap', 'satellite', 'terrain' and 'hybrid'
+}).addTo(map);
+
 ```
 
 It's also possible to use [custom styling](https://developers.google.com/maps/documentation/javascript/styling)
